@@ -26,7 +26,9 @@ validation_set_features = validation_set.loc[:, validation_set.columns != 'label
 #     pickle.dump(logreg, ouf)
 
 logreg = 0
-with open('model_serialized', 'rb') as inpf:
+with open('model_serialized.file', 'rb') as inpf:
     logreg = pickle.load(inpf)
 
-logreg.predict(validation_set_features)
+from pprint import pprint
+pprint(vars(logreg))
+#logreg.predict(validation_set_features)
